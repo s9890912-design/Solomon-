@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#008f83">
+    <meta name="description" content="MyWhatsApp - Your conversations, your community.">
+
+    <title>MyWhatsApp</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- LOGIN SCREEN -->
+    <section id="loginScreen" class="auth-screen active">
+
+        <div class="brand">
+            <div class="brand-icon">💬</div>
+            <h1>MyWhatsApp</h1>
+            <p>Your conversations, your community.</p>
+        </div>
+
+        <div class="auth-content">
+            <h2>Welcome back</h2>
+            <p class="subtitle">Sign in to continue.</p>
+
+            <form id="loginForm">
+
+                <label for="loginMethod">Login method</label>
+
+                <select id="loginMethod">
+                    <option value="phone">Phone number</option>
+                    <option value="email">Email address</option>
+                </select>
+
+                <div id="loginPhoneGroup">
+                    <label for="loginPhone">Phone number</label>
+                    <input
+                        type="tel"
+                        id="loginPhone"
+                        placeholder="Include country code, e.g. +234..."
+                    >
+                </div>
+
+                <div id="loginEmailGroup" class="hidden">
+                    <label for="loginEmail">Email address</label>
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email address"
+                    >
+                </div>
+
+                <label for="loginPassword">Password</label>
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                    required
+                >
+
+                <button type="submit" class="primary-button">
+                    Log In
+                </button>
+
+            </form>
+
+            <div class="auth-switch">
+                <p>New to MyWhatsApp?</p>
+
+                <button
+                    type="button"
+                    id="showRegister"
+                    class="register-button"
+                >
+                    Create New Account
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- REGISTRATION SCREEN -->
+    <section id="registerScreen" class="auth-screen hidden">
+
+        <div class="brand">
+            <div class="brand-icon">💬</div>
+            <h1>MyWhatsApp</h1>
+            <p>Create your account and connect.</p>
+        </div>
+
+        <div class="auth-content">
+            <h2>Create Account</h2>
+            <p class="subtitle">Join MyWhatsApp today.</p>
+
+            <form id="registerForm">
+
+                <label for="registerName">Full name</label>
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label for="registerPhone">Phone number</label>
+                <input
+                    type="tel"
+                    id="registerPhone"
+                    placeholder="Include country code, e.g. +234..."
+                    required
+                >
+
+                <label for="registerEmail">Email address (optional)</label>
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Enter your email address"
+                >
+
+                <label for="registerPassword">Create password</label>
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Create a password"
+                    minlength="8"
+                    required
+                >
+
+                <label for="confirmPassword">Confirm password</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Enter your password again"
+                    minlength="8"
+                    required
+                >
+
+                <button type="submit" class="primary-button">
+                    Create Account
+                </button>
+
+            </form>
+
+            <div class="auth-switch">
+                <p>Already have an account?</p>
+
+                <button
+                    type="button"
+                    id="showLogin"
+                    class="register-button"
+                >
+                    Back to Log In
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MAIN APP -->
+    <div id="appScreen" class="hidden">
+
+        <header class="app-header">
+            <h1>MyWhatsApp</h1>
+
+            <div class="header-actions">
+                <button type="button" id="searchButton" aria-label="Search">
+                    🔍
+                </button>
+
+                <button type="button" id="themeButton" aria-label="Change theme">
+                    🌙
+                </button>
+            </div>
+        </header>
+
+        <div id="searchArea" class="hidden search-area">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search chats..."
+            >
+        </div>
+
+        <main>
+
+            <section id="chatsTab" class="tab-content">
+                <h2>Chats</h2>
+
+                <div id="chatList" class="empty-state">
+                    <div class="empty-icon">💬</div>
+                    <h3>Your chats will appear here</h3>
+                    <p>Your conversations will be displayed here when messaging is connected.</p>
+                </div>
+            </section>
+
+            <section id="statusTab" class="tab-content hidden">
+                <h2>Status</h2>
+
+                <div class="empty-state">
+                    <div class="empty-icon">⭕</div>
+                    <h3>Updates from your friends</h3>
+                    <p>Status updates will appear here when this feature is implemented.</p>
+                </div>
+            </section>
+
+            <section id="callsTab" class="tab-content hidden">
+                <h2>Calls</h2>
+
+                <div class="empty-state">
+                    <div class="empty-icon">📞</div>
+                    <h3>Your calls</h3>
+                    <p>Your call history will appear here when calling is implemented.</p>
+                </div>
+            </section>
+
+            <section id="settingsTab" class="tab-content hidden">
+                <h2>Settings</h2>
+
+                <div class="settings-item">
+                    <span>👤</span>
+                    <div>
+                        <strong>Profile</strong>
+                        <p>Manage your profile information.</p>
+                    </div>
+                </div>
+
+                <div class="settings-item">
+                    <span>🔔</span>
+                    <div>
+                        <strong>Notifications</strong>
+                        <p>Notification settings will be added later.</p>
+                    </div>
+                </div>
+
+                <div class="settings-item">
+                    <span>🌙</span>
+                    <div>
+                        <strong>Appearance</strong>
+                        <p>Change between light and dark mode.</p>
+                        <button type="button" id="settingsThemeButton">
+                            Toggle theme
+                        </button>
+                    </div>
+                </div>
+
+                <div class="settings-item">
+                    <span>ℹ️</span>
+                    <div>
+                        <strong>About MyWhatsApp</strong>
+                        <p>Version 1.0 — Development preview</p>
+                    </div>
+                </div>
+
+                <button type="button" id="logoutButton" class="logout-button">
+                    Return to Login
+                </button>
+            </section>
+
+        </main>
+
+        <!-- BOTTOM NAVIGATION -->
+        <nav class="bottom-nav">
+
+            <button type="button" class="nav-button active" data-tab="chatsTab">
+                <span>💬</span>
+                <small>Chats</small>
+            </button>
+
+            <button type="button" class="nav-button" data-tab="statusTab">
+                <span>⭕</span>
+                <small>Status</small>
+            </button>
+
+            <button type="button" class="nav-button" data-tab="callsTab">
+                <span>📞</span>
+                <small>Calls</small>
+            </button>
+
+            <button type="button" class="nav-button" data-tab="settingsTab">
+                <span>⚙️</span>
+                <small>Settings</small>
+            </button>
+
+        </nav>
+
+    </div>
+
+    <script type="module" src="js/script.js"></script>
+
+</body>
+</html>
